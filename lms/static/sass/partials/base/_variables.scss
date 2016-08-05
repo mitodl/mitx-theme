@@ -5,9 +5,9 @@ $container-bg: #fbfbf9;
 $body-bg: #fbfbf9;
 
 $link-color: #a31f34;
-$link-color-d1: #a31f34;
-$link-hover: #a31f34; // from our Pattern Library http://ux.edx.org/elements/colors/
+$link-color-d1: $link-color;
+$link-hover: darken($link-color, 10%);
 
 .header-global-new {
-  border-bottom: 4px solid #a31f34 !important;
+  border-bottom: 4px solid #a31f34;
 }
