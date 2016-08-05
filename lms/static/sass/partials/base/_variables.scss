@@ -1,0 +1,13 @@
+@import 'lms/static/sass/partials/base/variables';
+
+$header-bg: rgba(186,186,187,0.75);
+$container-bg: #fbfbf9;
+$body-bg: #fbfbf9;
+
+$link-color: #a31f34;
+$link-color-d1: #a31f34;
+$link-hover: #a31f34; // from our Pattern Library http://ux.edx.org/elements/colors/
+
+.header-global-new {
+  border-bottom: 4px solid #a31f34 !important;
+}
