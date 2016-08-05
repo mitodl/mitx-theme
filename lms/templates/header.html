@@ -6,7 +6,6 @@
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
-from openedx.core.djangolib.markup import HTML, Text
 # App that handles subdomain specific branding
 import branding
 # app that handles site status messages
@@ -69,22 +68,18 @@ site_status_msg = get_site_status_msg(course_id)
 
     % if user.is_authenticated():
       % if not course or disable_courseware_header:
-        % if not nav_hidden or show_program_listing:
           <nav aria-label="Main" class="nav-main">
             <ul class="left list-inline nav-global authenticated">
-              % if not nav_hidden:
                 <%block name="navigation_global_links_authenticated">
                   <li class="item nav-global-01">
-                    <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
-                  </li>
-                  <li class="item nav-global-02">
                     <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
                   </li>
-                  <li class="item nav-global-03">
-                    <a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>
-                  </li>
+                  % if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD', False) and user.is_staff:
+                    <li class="item nav-global-02">
+                      <a href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+                    </li>
+                  % endif
                 </%block>
-              % endif
               % if show_program_listing:
                 <li class="tab-nav-item">
                   <a class="${'active ' if reverse('dashboard') == request.path else ''}tab-nav-link" href="${reverse('dashboard')}">
@@ -99,7 +94,6 @@ site_status_msg = get_site_status_msg(course_id)
               % endif
             </ul>
           </nav>
-        % endif
       % endif
 
       <%include file="user_dropdown.html"/>
@@ -144,12 +138,7 @@ site_status_msg = get_site_status_msg(course_id)
 </header>
 % if course:
 <!--[if lte IE 9]>
-<div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(
-    begin_strong=HTML('<strong>'),
-    end_strong=HTML('</strong>'),
-    chrome_link=HTML('<a href="https://www.google.com/chrome" target="_blank">Chrome</a>'),
-    ff_link=HTML('<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>'),
-)}</div>
+<div class="ie-banner" aria-hidden="true">${_('<strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.').format(chrome_link='<a href="https://www.google.com/chrome" target="_blank">Chrome</a>', ff_link='<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>')}</div>
 <![endif]-->
 % endif
 
