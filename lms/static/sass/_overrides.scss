@@ -16,10 +16,24 @@ ol.nav-global>li>a {
     font-size: 18px;
 }
 
-header.global .user .dropdown {
-  background-color: #e9e6df;
+.dashboard .my-courses .course .details .enter-course, .dashboard .my-courses .course .details .enter-course.archived {
+  border: 1px solid $link-color !important;
+  color: $link-color !important;
+  background-color: #fff !important;
 }
-
-header.global .primary>a {
-  box-shadow: none !important;
+.dashboard .my-courses .course .details .enter-course:hover, .dashboard .my-courses .course .details .enter-course.archived:hover {
+  color: #fff !important;
+  background-color: $link-color !important;
+}
+header.global .user .dropdown {
+  background: transparent !important;
+}
+header.global .user a.user-link {
+  box-shadow: none;
+}
+header.global .user a.user-link:active {
+  background-color: transparent !important;
+}
+.dashboard .profile-sidebar {
+  border:none !important;
 }
