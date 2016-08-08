@@ -1,0 +1,25 @@
+$header-bg: rgba(186,186,187,0.75);
+$container-bg: #fbfbf9;
+$body-bg: #fbfbf9;
+
+$link-color: #a31f34;
+$link-color-d1: $link-color;
+$link-hover: darken($link-color, 10%);
+
+#global-navigation {
+    border-bottom: 4px solid #a31f34;
+}
+
+ol.nav-global>li>a {
+    border-bottom: 4px solid #8a8b8c;
+    padding-bottom: 21px !important;
+    font-size: 18px;
+}
+
+header.global .user .dropdown {
+  background-color: #e9e6df;
+}
+
+header.global .primary>a {
+  box-shadow: none !important;
+}
