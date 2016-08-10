@@ -37,3 +37,7 @@ header.global .user a.user-link:active {
 .dashboard .profile-sidebar {
   border:none !important;
 }
+
+.home>header .title>hgroup h2 {
+    text-transform: none !important;
+}
