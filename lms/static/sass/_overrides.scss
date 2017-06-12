@@ -1,13 +1,6 @@
-$header-bg: rgba(186,186,187,0.75);
-$container-bg: #fbfbf9;
-$body-bg: #fbfbf9;
-
-$link-color: #a31f34;
-$link-color-d1: $link-color;
-$link-hover: darken($link-color, 10%);
 
 #global-navigation {
-    border-bottom: 4px solid #a31f34;
+    border-bottom: 4px solid #a31f34 !important;
 }
 
 ol.nav-global>li>a {
@@ -25,13 +18,16 @@ ol.nav-global>li>a {
   color: #fff !important;
   background-color: $link-color !important;
 }
-header.global .user .dropdown {
+
+.header-global .user .dropdown {
   background: transparent !important;
 }
-header.global .user a.user-link {
-  box-shadow: none;
+
+.header-global .user a.user-link {
+  box-shadow: none !important;
 }
-header.global .user a.user-link:active {
+
+.header-global .user a.user-link:active {
   background-color: transparent !important;
 }
 .dashboard .profile-sidebar {
@@ -40,4 +36,13 @@ header.global .user a.user-link:active {
 
 .home>header .title>hgroup h2 {
     text-transform: none !important;
+}
+
+.user-image-frame {
+  display: none !important;
+}
+
+.header-global .user .user-link .label-username {
+    float: right;
+    margin: 11px 5px 15px 15px !important;
 }
