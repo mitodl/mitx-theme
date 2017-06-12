@@ -1,0 +1,118 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Terms of Service")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1 class="heading-left">${_("Residential MITx Terms of Service")}</h1>
+        <br/>
+        <h2>${_("Intent")}</h2>
+        <p>
+            ${_("This service is intended for use by:")}<br/>
+            <ul>
+              <li>${_("MIT students enrolled at the Institute")}</li>
+              <li>${_("MIT faculty, instructors, teaching assistants and staff")}</li>
+              <li>${_("Non-MIT affiliates enrolled and/or participating in an academic course")}</li>
+            </ul>
+            ${_(
+              '''Residential MITx is a service offered by MIT's Office of Digital Learning (ODL) Requesting
+              and/or using a Residential MITx site indicates assent to these Terms of Service. Residential MITx
+              is offered on an "as is" basis and is intended for Institute-related business and interactions only.'''
+            )}
+        </p>
+
+        <h2>${_("Support")}</h2>
+        <p>
+           ${_('''The Residential MITx support team will respond to questions or difficulties during normal
+            Institute business hours and will work to resolve issues as promptly as is practical within this
+            time window. Support requests, bug reports and feedback should be sent to
+            {link_start}mitx-support@mit.edu{link_end}.''').format(
+            link_start='<a href="mailto:mitx-support@mit.edu">', link_end='</a>'
+           )}
+        </p>
+
+        <p>
+        ${_('''If you encounter any issues with MITx Residential MITx, please contact us at {link_start}
+          mitx-support@mit.edu{link_end}. In the case of prolonged system outage (planned or unplanned), we will
+          contact course instructors at their MIT e-mail address. If there is a significant unplanned outage,
+          we may recommend substituting non-digital teaching methods independent of MITx Residential.''').format(
+            link_start='<a href="mailto:mitx-support@mit.edu">', link_end='</a>'
+          )}
+        </p>
+
+        <h2>${_("Acceptable Use")}</h2>
+        <p>
+          ${_('''This service is to be used for legal purposes only, and in conformance with the Policies and
+            Procedures of the Massachusetts Institute of Technology.  For example, you may not use it to post,
+            distribute or disseminate any defamatory, obscene, or other unlawful material, including another's
+            proprietary information, including trademarks or copyrighted information without express authorization
+            from the rights holder. See the Acceptable Use Policy ({policies})
+            and MIT STOP IT ({stopit})''').format(
+             policies="<a href='http://web.mit.edu/policies/' target='_blank'>http://web.mit.edu/policies/</a>",
+             stopit="<a href='http://ist.mit.edu/stopit' target='_blank'>http://ist.mit.edu/stopit</a>"
+          )}
+        </p>
+
+        <h2>${_("User Access")}</h2>
+        <p>
+          ${_('''Be default, everyone with a valid MIT certificate can access Residential MITx & as such can
+            for and participate in any course on the system.  Instructors have the ability & responsibility to
+            override this default, limiting access to officially registered students, if they so desire.
+            Instructors can manually add people with MIT Collaboration accounts to their courses, and unlike valid
+            MIT certificate holders, users with MIT Collaboration accounts only have access to the courses they
+            have specifically been added to.  Instructors are responsible for the managing of student access to and
+            students requests for any and all course materials posted on current and past course sites.''')}
+        </p>
+
+        <h2>${_("Instructor Access")}</h2>
+        <p>
+           ${_('''Course administrators have access, upon request, to course sites, present and past
+            for a minimum of five years. This is subject to change based on archive and storage limitations.
+            Domain administrators will receive notification prior to any permanent archival of course sites.''')}
+        </p>
+
+        <h2>${_("Archiving process")}</h2>
+        <p>
+         ${_('''At term's end, courses are archived and removed from view, but will remain visible, or be
+        reinstated at the course instructor's request.''')}
+        </p>
+
+        <h2>${_("Copyright")}</h2>
+        <p>
+          ${_('''ODL, in accordance with Institute policy, is committed to complying with all copyright laws
+          to the fullest extent possible. Information for MIT faculty mounting course material on the Web
+          is available at MIT Libraries Copyright Information. For an extensive list of guides and
+          references to copyright policies and practices at MIT, see Copyright at MIT.''')}
+        </p>
+
+        <h2>${_("Intellectual Property")}</h2>
+        <p>
+           ${_('''Unauthorized use of third-party copyrighted work is illegal, unethical,
+            raises significant financial liability, and damages the reputation of MIT.
+            All Residential MITx users must exercise scrupulous care to identify the source of every
+            third-party owned element posted in the Residential MITx System.''')}
+        </p>
+
+        <h2>${_("Authentication")}</h2>
+        <p>
+          ${_('''Residential MITx uses MIT Touchstone as their login authentication process.
+            Non-members of the MIT community will authenticate to the service by means of MIT
+            Collaboration Accounts (https://ist.mit.edu/touchstone).''').format(
+            url="<a href='https://ist.mit.edu/touchstone' target='_blank'>https://ist.mit.edu/touchstone</a>"
+          )}
+        </p>
+
+        <h2>${_("Data storage & retention")}</h2>
+        <p>
+          ${_('''Data is stored and backed-up nightly. Data restoration can be requested
+            by e-mailing {link_start}mitx-support@mit.edu{link_end}. Course data is retained per Archiving Process section
+            above.  Student data is retained for a minimum of five years. This is subject to change based on
+            archive and storage limitations. Domain administrators will receive notification prior
+            to any permanent archival of course sites.
+            ''').format(
+              link_start='<a href="mailto:mitx-support@mit.edu">', link_end='</a>'
+          )}
+        </p>
+    </section>
+</main>
