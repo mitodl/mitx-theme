@@ -50,3 +50,18 @@ ol.nav-global>li>a {
 .heading-left {
   text-align: left !important;
 }
+
+.heading-group > h1 > button {
+  letter-spacing: 0px !important;
+  margin-left: 5px !important;
+  text-shadow: 0 1px rgba(255,255,255,0.6) !important;
+  text-transform: none !important;
+  color: $link-color !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: 0 0 0 0 transparent !important;
+  padding: 12px 0 !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+}
