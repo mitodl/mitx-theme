@@ -19,11 +19,11 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % else:
 
 ${_("To finish your registration, please visit {site_name}/dashboard You will need to "
-        "login with Touchstone to access this page. If you do not have a Touchstone "
-	"account, please contact your instructor for detailed directions."
-	"out the registration form making sure to use {email_address} in the E-mail field.").format(
-		site_name=site_name
-	)}
+        "You will need to  login with Touchstone to access this page. If you "
+        "do not have a Touchstone account, please contact your instructor for "
+        "detailed directions.").format(
+            site_name=site_name
+    )}
 % if auto_enroll:
 ${_("Once you have logged in with Touchstone, you will see "
 	"{course_name} listed on your dashboard.").format(
