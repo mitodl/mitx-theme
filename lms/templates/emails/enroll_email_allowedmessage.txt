@@ -19,7 +19,7 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % else:
 
 ${_("To finish your registration, please visit {site_name}/dashboard You will need to "
-        "You will need to  login with Touchstone to access this page. If you "
+        "You will need to login with Touchstone to access this page. If you "
         "do not have a Touchstone account, please contact your instructor for "
         "detailed directions.").format(
             site_name=site_name
