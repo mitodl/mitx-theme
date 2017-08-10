@@ -68,3 +68,19 @@ ol.nav-global>li>a {
   font-style: italic !important;
   font-size: 15px !important;
 }
+
+
+
+@media print {
+    .course-index {
+        display: none;
+    }
+
+    .xmodule_display.xmodule_CapaModule div.problem .action div.submission_feedback {
+        display: none;
+    }
+
+    #footer-edx-v3 {
+        display: none;
+    }
+}
