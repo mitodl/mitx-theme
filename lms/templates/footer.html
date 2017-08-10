@@ -26,6 +26,11 @@
             <a href="${footer['openedx_link']['url']}" title="${footer['openedx_link']['title']}">
               <img alt="${footer['openedx_link']['title']}" src="${footer['openedx_link']['image']}" width="140">
             </a>
+              % for item_num, link in enumerate(footer['legal_links'], start=1):
+                %if link['title'] == "Terms of Service":
+                    <a href="${link['url']}" style="font-size: 11px;margin-left: 6px;">${link['title']}</a>
+                %endif
+              % endfor
           </div>
           % endif
       </div>
