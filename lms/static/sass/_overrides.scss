@@ -68,3 +68,58 @@ ol.nav-global>li>a {
   font-style: italic !important;
   font-size: 15px !important;
 }
+
+@media print {
+  .course-index {
+      display: none;
+  }
+
+  #global-navigation {
+      border-bottom: 1px solid #C8C8C8 !important;
+  }
+
+  footer#footer-edx-v3 {
+      display: none;
+  }
+
+  .container > div {
+      border: none;
+  }
+
+  .xmodule_display.xmodule_CapaModule div.problem .action {
+      display: none;
+  }
+
+  .course-content .bookmark-button-wrapper {
+      display: none;
+  }
+
+  .container .courseware-bookmarks-button {
+      display: none;
+  }
+
+  .wrap-instructor-info .instructor-info-action {
+      display: none;
+  }
+
+  .container .courseware-search-bar {
+      display: none;
+  }
+
+  .course-wrapper .course-content .path, .course-wrapper .courseware-results-wrapper .path {
+      margin-top: -12px;
+      margin-bottom: 2px;
+  }
+
+  a, a:visited {
+      text-decoration: underline !important;
+  }
+
+  .xmodule_display.xmodule_CapaModule div.problem-progress {
+      display: none;
+  }
+
+  .course-wrapper .course-content .vert-mod .vert>.xblock-student_view {
+      padding: none;
+  }
+}
