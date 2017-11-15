@@ -10,7 +10,8 @@
 // ====================
 
 // base - utilities
-@import 'partials/lms/theme/_variables';
+@import 'base/variables';
+@import 'base/mixins';
 
 // This comment is used by preprocess_assets.py to include resources from a
 // theme, for old-style deprecated theming.
