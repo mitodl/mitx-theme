@@ -22,6 +22,10 @@ ol.nav-global>li>a {
   background-color: $link-color !important;
 }
 
+.header-global {
+  background: $header-bg !important;
+}
+
 .header-global .user .dropdown {
   background: transparent !important;
 }
