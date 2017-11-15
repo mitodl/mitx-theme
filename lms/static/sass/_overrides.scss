@@ -22,19 +22,19 @@ ol.nav-global>li>a {
   background-color: $link-color !important;
 }
 
-.header-global {
+.global-header {
   background: $header-bg !important;
 }
 
-.header-global .user .dropdown {
+.global-header .user .dropdown {
   background: transparent !important;
 }
 
-.header-global .user a.user-link {
+.global-header .user a.user-link {
   box-shadow: none !important;
 }
 
-.header-global .user a.user-link:active {
+.global-header .user a.user-link:active {
   background-color: transparent !important;
 }
 .dashboard .profile-sidebar {
@@ -49,7 +49,7 @@ ol.nav-global>li>a {
   display: none !important;
 }
 
-.header-global .user .user-link .label-username {
+.global-header .user .user-link .label-username {
   float: right;
   margin: 11px 5px 15px 15px !important;
 }
