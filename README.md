@@ -5,5 +5,5 @@
 | branch      | description   |
 |-------------|------------------------------------------------------------------------------|
 | ficus       | theme for use with the `mitx-ficus` release for https://lms.mitx.mit.edu/    |
-| ficus-draft | theme for use with the `mitx-ficus` release on https://staging.mitx.mit.edu/ |
-| master      |                                                                              |
+| ginkgo      | theme for use with the `mitx-ginkgo` release, on https://mitx-qa-next.mitx.mit.edu |
+| master      | currently for use with the `mitx-ginkgo` release, on https://mitx-qa-next.mitx.mit.edu |                                                                            
