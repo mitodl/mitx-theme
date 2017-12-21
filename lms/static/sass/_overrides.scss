@@ -89,6 +89,24 @@ ol.nav-global>li>a {
   font-size: 15px !important;
 }
 
+.window-wrap {
+    background-color: $container-bg;
+}
+
+.nav-main, .nav-global {
+    display: none !important;
+}
+
+.tab a {
+    color: $gray-d1 !important;
+    @include transition(all $tmg-f3 linear 0s);
+}
+
+.tabs .tab a.active, .tab a:hover {
+    border-bottom-color: rgb(6, 86, 131) !important;
+    color: rgb(6, 86, 131) !important;
+}
+
 @media print {
   .course-index {
       display: none !important;
