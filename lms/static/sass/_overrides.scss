@@ -96,7 +96,8 @@ ol.nav-global>li>a {
 .header-global.slim .course-header {
     width: auto !important;
 }
-.header-global .user .user-link .label-username {
+
+.header-global .user .user-link .label-username, .dropdown-menu-container .menu-title {
     text-overflow: ellipsis !important;
     overflow: hidden !important;
     max-width: 180px !important;
