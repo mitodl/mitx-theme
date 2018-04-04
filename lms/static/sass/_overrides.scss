@@ -17,11 +17,45 @@ ol.nav-global>li>a {
   color: $link-color !important;
   background-color: #fff !important;
 }
+
 .dashboard .my-courses .course .details .enter-course:hover, .dashboard .my-courses .course .details .enter-course.archived:hover {
   color: #fff !important;
   background-color: $link-color !important;
 }
 
+.find-courses {
+  background: white !important;
+
+  .courses-container {
+    .courses {
+      padding: 0 0 0 30px !important;
+
+      .courses-listing .courses-listing-item {
+        width: 100% !important;
+        margin: 5px 0 10px !important;
+
+        a {
+          text-decoration: underline;
+        }
+
+        a:not(.btn) {
+          color: #003655 !important;
+        }
+
+        .course-date {
+          color: black;
+          display: inline-block;
+        }
+      }
+    }
+
+    .courses.non-credit {
+      padding-top: 50px !important;
+    }
+  }
+}
+
+.find-courses .courses-container .courses
 .global-header {
   background: $header-bg !important;
 }

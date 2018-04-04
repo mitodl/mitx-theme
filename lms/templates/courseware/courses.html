@@ -1,0 +1,55 @@
+<%!
+  import json
+  from django.utils.translation import ugettext as _
+  from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
+<%inherit file="../main.html" />
+
+<%namespace name='static' file='../static_content.html'/>
+
+<%block name="pagetitle">${_("Courses")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="find-courses">
+      <section class="courses-container">
+        <%
+        courses.sort(key=lambda x: x.display_number_with_default)
+        codes = ['AS', 'CC', 'CMS', 'CSB', 'EC', 'EM', 'ES', 'HST', 'ISS', 'MAS', 'MS', 'NS', 'SCM', 'STS', 'WGS']
+        credit_courses = []
+        non_credit_courses = []
+        for x in courses:
+          if x.display_number_with_default[0].isdigit():
+            if x.display_number_with_default.startswith('0'):
+              non_credit_courses.append(x)
+            else:
+              credit_courses.append(x)
+          else:
+            if x.display_number_with_default.startswith(tuple(codes)):
+              credit_courses.append(x)
+            else:
+              non_credit_courses.append(x)
+        %>
+        <div class="courses" role="region" aria-label="${_('List of Courses')}">
+          <ul class="courses-listing">
+
+            %for course in credit_courses:
+            <li class="courses-listing-item">
+              <%include file="../course.html" args="course=course" />
+            </li>
+            %endfor
+          </ul>
+
+        </div>
+        <div class="courses non-credit">
+          <ul class="courses-listing">
+           %for course in non_credit_courses:
+            <li class="courses-listing-item">
+              <%include file="../course.html" args="course=course" />
+            </li>
+          %endfor
+          </ul>
+        </div>
+
+      </section>
+    </section>
+</main>
