@@ -24,17 +24,6 @@ from six import text_type
           <div class="course-date localized_datetime" aria-hidden="true" data-format="shortDate" data-datetime="${course_date_string}" data-string="${_("Starts: {date}")}"></div>
       % endif
     </div>
-    <div class="sr">
-      <ul>
-        <li>${course.display_org_with_default}</li>
-        <li>${course.display_number_with_default}</li>
-        % if course.advertised_start is not None:
-            <li>${_("Starts")}: <time itemprop="startDate">${course.advertised_start}</time></li>
-        % else:
-            <li>${_("Starts")}: <time class="localized_datetime" itemprop="startDate" data-format="shortDate" data-datetime="${course_date_string}"></time></li>
-        % endif
-      </ul>
-    </div>
   </a>
 </article>
 <%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">

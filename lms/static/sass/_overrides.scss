@@ -39,7 +39,7 @@ ol.nav-global>li>a {
         }
 
         a:not(.btn) {
-          color: #003655 !important;
+          color: $link-color !important;
         }
 
         .course-date {
