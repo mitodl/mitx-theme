@@ -16,6 +16,7 @@
         courses.sort(key=lambda x: x.display_number_with_default)
         codes = ['AS', 'CC', 'CMS', 'CSB', 'EC', 'EM', 'ES', 'HST', 'ISS', 'MAS', 'MS', 'NS', 'SCM', 'STS', 'WGS']
         credit_courses = []
+        credit_courses_letter = []
         non_credit_courses = []
         for x in courses:
           if x.display_number_with_default[0].isdigit():
@@ -25,14 +26,21 @@
               credit_courses.append(x)
           else:
             if x.display_number_with_default.startswith(tuple(codes)):
-              credit_courses.append(x)
+              credit_courses_letter.append(x)
             else:
               non_credit_courses.append(x)
+        import re
+        credit_courses.sort(key=lambda x: float(re.sub(r'[^0-9\.]', '', x.display_number_with_default)))
         %>
         <div class="courses" role="region" aria-label="${_('List of Courses')}">
           <ul class="courses-listing">
 
             %for course in credit_courses:
+            <li class="courses-listing-item">
+              <%include file="../course.html" args="course=course" />
+            </li>
+            %endfor
+            %for course in credit_courses_letter:
             <li class="courses-listing-item">
               <%include file="../course.html" args="course=course" />
             </li>
