@@ -112,16 +112,6 @@ ol.nav-global>li>a {
     background-color: $container-bg;
 }
 
-.global-header.slim .course-header {
-    width: auto !important;
-}
-
-.global-header .user .user-link .label-username, .dropdown-menu-container .menu-title {
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-    max-width: 180px !important;
-}
-
 .tab a {
     color: $gray-d1 !important;
     @include transition(all $tmg-f3 linear 0s);
