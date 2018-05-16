@@ -30,7 +30,9 @@
             else:
               non_credit_courses.append(x)
         import re
-        credit_courses.sort(key=lambda x: float(re.sub(r'[^0-9\.]', '', x.display_number_with_default)))
+        credit_courses.sort(key=lambda x: float(
+          ".".join(re.sub(r'[^0-9\.]', '', x.display_number_with_default).split(".", 2)[:2])
+        ))
         %>
         <div class="courses" role="region" aria-label="${_('List of Courses')}">
           <ul class="courses-listing">
