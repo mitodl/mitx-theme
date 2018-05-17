@@ -1,0 +1,11 @@
+// -----------------------------
+// LMS main styles for Bootstrap
+// -----------------------------
+@import 'bourbon/bourbon'; // lib - bourbon
+@import 'vendor/bi-app/bi-app-ltr'; // set the layout for left to right languages
+
+@import 'edx-bootstrap/sass/open-edx/theme';
+@import 'lms/static/sass/partials/lms/theme/variables-v1.scss';
+@import 'lms/static/sass/bootstrap/lms-main.scss';
+@import "../partials/lms/theme/variables";
+@import "../overrides";
