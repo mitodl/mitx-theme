@@ -2,14 +2,24 @@ body {
   margin: 0px !important;
 }
 
-.global-header{
+.global-header {
   border-bottom: 4px solid #a31f34 !important;
 }
 
-ol.nav-global>li>a {
-  border-bottom: 4px solid #8a8b8c;
+.wrapper-preview-menu {
+  background: #c8c8c8 !important;
+}
+
+.global-header .nav-links .main .nav-tab a {
+  border-bottom: 4px solid #8a8b8c !important;
   padding-bottom: 10px !important;
   font-size: 18px;
+  color: #a31f34 !important;
+  margin: 0 5px;
+
+  &:hover {
+    border-bottom: 4px solid #8a8b8c !important;
+  }
 }
 
 .dashboard .my-courses .course .details .enter-course, .dashboard .my-courses .course .details .enter-course.archived {
@@ -87,11 +97,12 @@ ol.nav-global>li>a {
 .global-header .user a.user-link:active {
   background-color: transparent !important;
 }
+
 .dashboard .profile-sidebar {
-  border:none !important;
+  border: none !important;
 }
 
-.home>header .title>hgroup h2 {
+.home > header .title > hgroup h2 {
   text-transform: none !important;
 }
 
@@ -109,17 +120,23 @@ ol.nav-global>li>a {
 }
 
 .window-wrap {
-    background-color: $container-bg;
+  background-color: $container-bg;
 }
 
 .tab a {
-    color: $gray-d1 !important;
-    @include transition(all $tmg-f3 linear 0s);
+  color: $gray-d1 !important;
+  @include transition(all $tmg-f3 linear 0s);
 }
 
-.tabs .tab a.active, .tab a:hover {
-    border-bottom-color: rgb(6, 86, 131) !important;
-    color: rgb(6, 86, 131) !important;
+.tabs .tab a.active,
+.tab a:hover {
+  border-bottom-color: #8a8b8c !important;
+  color: #8a8b8c !important;
+}
+
+.wrapper-preview-menu .preview-actions .action-preview .action-preview-label {
+  color: black !important;
+  margin-left: 25px !important;
 }
 
 @media print {
