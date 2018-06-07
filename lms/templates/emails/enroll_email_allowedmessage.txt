@@ -19,10 +19,10 @@ ${_("To access the course visit {course_about_url} and register for the course."
 % else:
 
 ${_("To access the course, you will first need to register for Residential MITx at {site_name}"
-        "with your Kerberos ID or Touchstone account."
-        "If you do not have a Kerberos ID and need to set up a Touchstone account,
-        "please contact your instructor for detailed directions.\n").format(
-            site_name=site_name
+    "with your Kerberos ID or Touchstone account."
+    "If you do not have a Kerberos ID and need to set up a Touchstone account,"
+    "please contact your instructor for detailed directions.\n").format(
+        site_name=site_name
     )}
 % if auto_enroll:
 ${_("Once you have registered and logged in, visit the course site at "
