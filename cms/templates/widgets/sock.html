@@ -23,10 +23,17 @@ from django.core.urlresolvers import reverse
         <%!
         from django.conf import settings
 
+        partner_email = settings.PARTNER_SUPPORT_EMAIL
+
         links = [{
             'href': 'http://docs.edx.org',
             'sr_mouseover_text': _('Access documentation on http://docs.edx.org'),
             'text': _('edX Documentation'),
+            'condition': True
+        }, {
+            'href': 'https://partners.edx.org',
+            'sr_mouseover_text': _('Access Course Staff Support on the Partner Portal to submit or review support tickets'),
+            'text': _('edX Partner Portal'),
             'condition': True
         }, {
             'href': 'https://www.edx.org/course/overview-creating-edx-course-edx-edx101#.VO4eaLPF-n1',
@@ -38,6 +45,11 @@ from django.core.urlresolvers import reverse
             'sr_mouseover_text': _('Enroll in StudioX: Creating a Course with edX Studio'),
             'text': _('Enroll in StudioX'),
             'condition': True
+        }, {
+            'href': 'mailto:{email}'.format(email=partner_email),
+            'sr_mouseover_text': _('Send an email to {email}').format(email=partner_email),
+            'text': _('Contact Us'),
+            'condition': bool(partner_email)
         }]
         %>
 
