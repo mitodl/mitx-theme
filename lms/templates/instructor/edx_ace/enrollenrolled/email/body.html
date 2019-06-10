@@ -1,0 +1,21 @@
+{% extends 'ace_common/edx_ace/common/base_body.html' %}
+
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+{% autoescape off %}{% blocktrans %}Dear {{ full_name }}{% endblocktrans %}
+<br />
+
+{% blocktrans %}You have been enrolled in {{ course_name }} at {{ site_name }} by a member of the course staff.
+<br />
+This course will now appear on your {{ site_name }} dashboard.{% endblocktrans %}
+<br />
+{% blocktrans %}To start accessing course materials, please visit {{ course_url }}{% endblocktrans %}
+<br />
+----
+<br />
+{% blocktrans %}This email was automatically sent from {{ site_name }} to {{ full_name }}{% endblocktrans %}
+{% endautoescape %}
+
+{% endblock %}
