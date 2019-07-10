@@ -1,0 +1,8 @@
+{% load i18n %}
+{% load ace %}
+
+{% block content %}{% endblock %}
+
+{# Debug info that is not user-visible #}
+<span id="ace-message-id" style="display:none;">{{ message.log_id }}</span>
+<span id="template-revision" style="display:none;">{{ template_revision }}</span>
