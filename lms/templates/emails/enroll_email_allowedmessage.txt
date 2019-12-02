@@ -42,4 +42,3 @@ ${_("This email was automatically sent from {site_name} to "
     "{email_address}").format(
         site_name=site_name, email_address=email_address
     )}
-
