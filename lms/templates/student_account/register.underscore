@@ -8,7 +8,7 @@
 	</div>
 <% } %>
 
-<form style="display: none" id="register" class="register-form" autocomplete="off" tabindex="-1" method="POST">
+<form id="register" class="register-form" autocomplete="off" tabindex="-1" method="POST">
 
     <% if (!context.currentProvider) { %>
         <% if (context.providers.length > 0 || context.hasSecondaryProviders) { %>
@@ -39,7 +39,7 @@
                     </button>
                 <% } %>
             </div>
-            <div class="section-title lines">
+            <div style="display: none" class="section-title lines">
                 <h3>
                     <span class="text"><%- gettext("or create a new one here") %></span>
                 </h3>
@@ -51,8 +51,11 @@
         <span class="auto-register-message"><%- context.autoRegisterWelcomeMessage %></span>
     <% } %>
 
+    <!-- wrapper to hide django-generated fields -->
+    <div style="display: none" >
     <%= context.fields %>
-
+    </div>
+    
     <div class="form-field checkbox-optional_fields_toggle">
         <input type="checkbox" id="toggle_optional_fields" class="input-block checkbox"">
         <label for="toggle_optional_fields">
