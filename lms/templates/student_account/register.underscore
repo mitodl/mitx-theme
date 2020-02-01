@@ -55,7 +55,7 @@
     <div style="display: none" >
     <%= context.fields %>
     </div>
-    
+
     <div class="form-field checkbox-optional_fields_toggle">
         <input type="checkbox" id="toggle_optional_fields" class="input-block checkbox"">
         <label for="toggle_optional_fields">
@@ -66,7 +66,7 @@
     </div>
 
 
-    <button type="submit" class="action action-primary action-update js-register register-button">
+    <button style="display: none" type="submit" class="action action-primary action-update js-register register-button">
     	<% if ( context.registerFormSubmitButtonText ) { %><%- context.registerFormSubmitButtonText %><% } else { %><%- gettext("Create Account") %><% } %>
     </button>
 </form>
