@@ -19,7 +19,7 @@ from openedx.core.djangoapps.user_api.accounts.utils import retrieve_last_sitewi
 <%
     profile_image_url = get_profile_image_urls_for_user(self.real_user)['medium']
     username = self.real_user.username
-    resume_block = retrieve_last_sitewide_block_completed(username)
+    resume_block = retrieve_last_sitewide_block_completed(self.real_user)
 %>
 
 
