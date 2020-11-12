@@ -30,5 +30,7 @@
             </button>
         <% } %>
     </div>
+    <% } else { %>
+        <h2><%- gettext("No oauth2 provider has been configured. You cannot login.") %></h2>
     <% } %>
 </form>
