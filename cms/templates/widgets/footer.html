@@ -6,12 +6,6 @@ from django.urls import reverse
 <div class="wrapper-footer wrapper">
   <footer class="primary" role="contentinfo">
 
-    <div class="footer-content-primary">
-      <div class="colophon">
-        <p><a data-rel="edx.org" href="https://lms.mitx.mit.edu/tos" target="_blank">${_("Terms of Service")}</a></p>
-      </div>
-    </div>
-
     <div class="footer-content-secondary" aria-label="{_('Legal')}">
       <div class="footer-about-copyright">
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
@@ -28,7 +22,11 @@ from django.urls import reverse
         <a href="http://open.edx.org" title="${_("Powered by Open edX")}">
           <img alt="${_("Powered by Open edX")}" src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png">
         </a>
+        <div>
+          <p style="text-align: left; font-size: 11px; margin-left: 6px;"><a style="color: #a31f34; text-decoration: underline;" data-rel="edx.org" href="https://lms.mitx.mit.edu/tos" target="_blank">${_("Terms of Service")}</a></p>
+        </div>
       </div>
+
     </div>
   </footer>
 </div>
