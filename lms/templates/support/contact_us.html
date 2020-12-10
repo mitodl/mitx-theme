@@ -1,0 +1,31 @@
+<%!
+from django.utils.translation import ugettext as _
+%>
+
+<%inherit file="../main.html"/>
+
+<%block name="title">
+    <title>
+        ${_("Contact {platform_name} Support").format(platform_name=platform_name)}
+    </title>
+</%block>
+
+<%block name="head_extra">
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</%block>
+
+<main id="main" aria-label="Content">
+
+    <div id="root" class="container">
+        <h2 class="heading-left">${_("Contact Us")}</h2>
+        <p style="padding-top: 16px">
+            Find answers to common questions in the <a class="nav-link"
+            href='https://edx.readthedocs.io/projects/open-edx-building-and-running-a-course/en/latest/'>Open edX
+            documentation.</a>
+        </p>
+        <p>
+            For other support questions, please reach out to <a
+            href="mailto:mitx-support@mit.edu">mitx-support@mit.edu</a>.
+        </p>
+    </div>
+</main>
