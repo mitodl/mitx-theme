@@ -9,6 +9,14 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 %>
 
+<%
+  try:
+    from edx_sysadmin.utils.utils import show_sysadmin_dashboard
+    sysadmin_dashboard = show_sysadmin_dashboard(user)
+  except:
+    sysadmin_dashboard = None
+%>
+
 <ol class="left nav-global list-inline authenticated">
   <%block name="navigation_global_links_authenticated">
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
@@ -28,10 +36,10 @@ from django.utils.translation import ugettext as _
         </a>
       </li>
     % endif
-    %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+    %if sysadmin_dashboard:
       <li class="item">
         ## Translators: This is short for "System administration".
-        <a href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+        <a href="${reverse('sysadmin:sysadmin')}">${_("Sysadmin")}</a>
       </li>
     %endif
   </%block>

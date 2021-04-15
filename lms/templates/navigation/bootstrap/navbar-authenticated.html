@@ -9,6 +9,14 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 %>
 
+<%
+  try:
+    from edx_sysadmin.utils.utils import show_sysadmin_dashboard
+    sysadmin_dashboard = show_sysadmin_dashboard(user)
+  except:
+    sysadmin_dashboard = None
+%>
+
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
      % if course:
@@ -46,10 +54,10 @@ from django.utils.translation import ugettext as _
       </li>
     % endif
 
-    % if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+    % if sysadmin_dashboard:
       <li class="nav-item mt-2 nav-item-open-collapsed">
         ## Translators: This is short for "System administration".
-        <a class="nav-link" href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
+        <a class="nav-link" href="${reverse('sysadmin:sysadmin')}">${_("Sysadmin")}</a>
       </li>
     % endif
   </ul>
