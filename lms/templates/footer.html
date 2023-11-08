@@ -1,6 +1,6 @@
 ## mako
 <%!
-  from django.utils.translation import ugettext as _
+  from django.utils.translation import gettext as _
   from lms.djangoapps.branding.api import get_footer
 %>
 <% footer = get_footer(is_secure=is_secure) %>
