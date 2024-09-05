@@ -22,18 +22,20 @@
           ## through an API to partner sites (such as marketing sites or blogs),
           ## which are not technically powered by OpenEdX.
           % if not hide_openedx_link:
-          <div class="openedx-link">
-            <a href="${footer['openedx_link']['url']}" title="${footer['openedx_link']['title']}">
-              <img alt="${footer['openedx_link']['title']}" src="${footer['openedx_link']['image']}" width="140">
+          <div class="openedx-link" style="margin-left: 6px; font-size: 11px;">
+            <a href="https://openlearning.mit.edu">
+              <img alt="${footer['openedx_link']['title']}" src="${footer['logo_image']}">
             </a>
               % for item_num, link in enumerate(footer['legal_links'], start=1):
                 %if link['title'] == "Terms of Service":
-                    <a href="${link['url']}" style="font-size: 11px;margin-left: 6px;">${link['title']}</a>
+                    <a href="${link['url']}" style="margin-top:6px;">${link['title']}</a>
                 %endif
               % endfor
           </div>
           % endif
-      </div>
+          <address style="font-size: 11px;">600 Technology Square, Cambridge, MA 02139</address>
+
+        </div>
     </div>
 </footer>
 % if include_dependencies:
