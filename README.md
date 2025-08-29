@@ -17,8 +17,8 @@
 | [palm](https://github.com/mitodl/mitx-theme/tree/palm)         | OBSOLETE theme for use with the `mitx-palm` release of Residential MITx                         |
 | [quince](https://github.com/mitodl/mitx-theme/tree/quince)     | OBSOLETE theme for use with the `mitx-quince` release of Residential MITx                       |
 | [redwood](https://github.com/mitodl/mitx-theme/tree/redwood)   | OBSOLETE theme for use with the `mitx-redwood` release of Residential MITx                      |
-| [sumac](https://github.com/mitodl/mitx-theme/tree/sumac)       | Theme for use with the `mitx-sumac` release of Residential MITx, on https://lms.mitx.mit.edu    |
-| [teak](https://github.com/mitodl/mitx-theme/tree/teak)         | Theme for use with the `mitx-teak` release of Residential MITx, on https://mitx-qa.mitx.mit.edu |
+| [sumac](https://github.com/mitodl/mitx-theme/tree/sumac)       | OBSOLETE theme for use with the `mitx-sumac` release of Residential MITx                        |
+| [teak](https://github.com/mitodl/mitx-theme/tree/teak)         | Theme for use with the `mitx-teak` release of Residential MITx, on https://mitx-qa.mitx.mit.edu, https://lms.mitx.mit.edu |
 | [master](https://github.com/mitodl/mitx-theme/tree/master)     | Theme for use on https://lms-ci.mitx.mit.edu                                                    |
 
 ### Configuring theme
