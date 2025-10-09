@@ -139,7 +139,11 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
         branch.init('${branch_key | n, js_escaped_string}');
     </script>
 % endif
-
+ % if course and course is not UNDEFINED and render_course_wide_assets:
+      % for css in course.course_wide_css:
+        <link rel="stylesheet" href="${css}" type="text/css">
+      % endfor
+  % endif
 </head>
 
 <body class="${static.dir_rtl()} <%block name='bodyclass'/> lang_${LANGUAGE_CODE}">
