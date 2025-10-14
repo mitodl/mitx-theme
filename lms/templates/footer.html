@@ -27,8 +27,8 @@
               <img alt="${footer['openedx_link']['title']}" src="${footer['logo_image']}">
             </a>
               % for item_num, link in enumerate(footer['legal_links'], start=1):
-                %if link['title'] == "Terms of Service":
-                    <a href="${link['url']}" style="margin-top:6px;">${link['title']}</a>
+                %if link['name'] in ['terms_of_service', 'accessibility_policy']:
+                  <a href="${link['url']}" style="margin-top:6px;">${link['title']}</a>
                 %endif
               % endfor
           </div>
