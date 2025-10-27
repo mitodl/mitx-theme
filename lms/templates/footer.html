@@ -26,11 +26,17 @@
             <a href="https://openlearning.mit.edu">
               <img alt="${footer['openedx_link']['title']}" src="${footer['logo_image']}">
             </a>
-              % for item_num, link in enumerate(footer['legal_links'], start=1):
-                %if link['name'] in ['terms_of_service', 'accessibility_policy']:
-                  <a href="${link['url']}" style="margin-top:6px;">${link['title']}</a>
+            <span style="display: inline-flex; align-items: center; white-space: nowrap;">
+              <%
+                filtered_links = [link for link in footer['legal_links'] if link['name'] in ['terms_of_service', 'accessibility_policy']]
+              %>
+              % for item_num, link in enumerate(filtered_links, start=1):
+                %if item_num > 1:
+                <span style="margin: 0 4px;"> - </span>
                 %endif
+                <a href="${link['url']}">${link['title']}</a>
               % endfor
+            </span>
           </div>
           % endif
           <address style="font-size: 11px;">600 Technology Square, Cambridge, MA 02139</address>
