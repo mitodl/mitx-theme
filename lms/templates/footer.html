@@ -2,48 +2,85 @@
 <%!
   from django.utils.translation import gettext as _
   from lms.djangoapps.branding.api import get_footer
+  from django.conf import settings
+  from datetime import datetime
 %>
-<% footer = get_footer(is_secure=is_secure) %>
+<%
+  footer = get_footer(is_secure=request.is_secure())
+  footer['copyright'] = _(u"\u00A9 {year} Massachusetts Institute of Technology").format(year=datetime.now().year)
+  footer['navigation_links'] = [link for link in footer['navigation_links'] if link.get("name")!="help-center"]
+
+  icp_license = getattr(settings,'ICP_LICENSE', False)
+  icp_markup = u" | {icp}".format(icp=icp_license) if icp_license else ""
+
+  footer_links = {
+    "terms_of_service": {"url": None, "title": "Terms of Service"},
+    "accessibility_policy": {"url": None, "title": "Accessibility"},
+  }
+  for link in footer['legal_links']:
+      url = link.get('url')
+      name = link.get('name')
+      if not url or name not in footer_links.keys():
+          continue
+      footer_links[link["name"]]["url"] = url
+%>
 <%namespace name='static' file='static_content.html'/>
 
-## WARNING: These files are specific to edx.org and are not used in installations outside of that domain. Open edX users will want to use the file "footer.html" for any changes or overrides.
-<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}"
-  ## When rendering the footer through the branding API,
-  ## the direction may not be set on the parent element,
-  ## so we set it here.
-  % if bidi:
-    dir=${bidi}
-  % endif
->
-    <h2 class="sr footer-about-title">${_("About MITx")}</h2>
-    <div class="footer-content-wrapper">
-      <div class="site-details">
-          ## The OpenEdX link may be hidden when this view is served
-          ## through an API to partner sites (such as marketing sites or blogs),
-          ## which are not technically powered by OpenEdX.
-          % if not hide_openedx_link:
-          <div class="openedx-link" style="margin-left: 6px; font-size: 11px;">
-            <a href="https://openlearning.mit.edu">
-              <img alt="${footer['openedx_link']['title']}" src="${footer['logo_image']}">
-            </a>
-            <span style="display: inline-flex; align-items: center; white-space: nowrap;">
-              <%
-                filtered_links = [link for link in footer['legal_links'] if link['name'] in ['terms_of_service', 'accessibility_policy']]
-              %>
-              % for item_num, link in enumerate(filtered_links, start=1):
-                %if item_num > 1:
-                <span style="margin: 0 4px;"> - </span>
-                %endif
-                <a href="${link['url']}">${link['title']}</a>
-              % endfor
-            </span>
-          </div>
-          % endif
-          <address style="font-size: 11px;">600 Technology Square, Cambridge, MA 02139</address>
+<%
+  footer_css_urls = context.get('footer_css_urls', [])
+%>
 
+<%def name="render_footer()">
+  <footer class="mit-footer"${(' dir="%s"' % bidi) if bidi else ''}>
+    <div class="mit-footer__inner">
+      <div class="mit-footer__column mit-footer__column--brand">
+        <a class="mit-footer__logo" href="${settings.MIT_BASE_URL}">
+          <img src="${footer['logo_image']}" alt="${platform_name}" />
+        </a>
+      </div>
+      <div class="mit-footer__column mit-footer__column--links">
+        <nav class="mit-footer__nav" aria-label="${_('Footer navigation')}">
+          <ul class="mit-footer__menu">
+            % for key, value in footer_links.items():
+              <li class="mit-footer__menu-item">
+                <a href="${value['url']}">${value['title']}</a>
+              </li>
+            % endfor
+          </ul>
+        </nav>
+        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+        <div class="mit-footer__legal">
+          <p class="mit-footer__copyright">${footer['copyright']}${icp_markup}</p>
+          <p class="mit-footer__trademark">
+            ${_(u"edX and Open edX are registered trademarks of edX LLC.")}
+          </p>
         </div>
+      </div>
+      <div class="mit-footer__column mit-footer__column--actions">
+        % if context.get('include_language_selector', False):
+          <div class="mit-footer__language">
+            <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+          </div>
+        % endif
+        <div class="mit-footer__powered">
+          <a href="https://openedx.org" class="mit-footer__powered-link">
+            <img src="https://logos.openedx.org/open-edx-logo-tag.png" alt="Open edX" />
+          </a>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
+</%def>
+
+% if uses_bootstrap:
+  <div class="container-fluid wrapper-footer">
+    ${render_footer()}
+  </div>
+% else:
+  <div class="wrapper wrapper-footer">
+    ${render_footer()}
+  </div>
+% endif
 % if include_dependencies:
   <%static:js group='base_vendor'/>
   <%static:css group='style-vendor'/>
