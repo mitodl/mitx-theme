@@ -7,7 +7,7 @@
 %>
 <%
   footer = get_footer(is_secure=request.is_secure())
-  footer['copyright'] = _(u"\u00A9 {year} Massachusetts Institute of Technology").format(year=datetime.now().year)
+  footer['copyright'] = _(u"\u00A9 {year} MITx Residential. All rights reserved.").format(year=datetime.now().year)
   footer['navigation_links'] = [link for link in footer['navigation_links'] if link.get("name")!="help-center"]
 
   icp_license = getattr(settings,'ICP_LICENSE', False)
