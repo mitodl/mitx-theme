@@ -12,6 +12,7 @@
 
   icp_license = getattr(settings,'ICP_LICENSE', False)
   icp_markup = u" | {icp}".format(icp=icp_license) if icp_license else ""
+  brand_home_url = getattr(settings, "MIT_OPEN_LEARNING_SITE_LINK", "https://openlearning.mit.edu/")
 
   footer_links = {
     "terms_of_service": {"url": None, "title": "Terms of Service"},
@@ -34,7 +35,7 @@
   <footer class="mit-footer"${(' dir="%s"' % bidi) if bidi else ''}>
     <div class="mit-footer__inner">
       <div class="mit-footer__column mit-footer__column--brand">
-        <a class="mit-footer__logo" href="${settings.MIT_BASE_URL}">
+        <a class="mit-footer__logo" href="${brand_home_url}">
           <img src="${footer['logo_image']}" alt="${platform_name}" />
         </a>
       </div>
