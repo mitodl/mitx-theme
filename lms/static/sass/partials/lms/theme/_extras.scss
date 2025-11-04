@@ -1,0 +1,215 @@
+// Shared design tokens to keep typography and color usage consistent across the LMS theme.
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+$font-size-ui: 1.125rem;
+$color-surface-muted: #f7f7f7;
+$color-surface-default: #ffffff;
+$color-surface-border: #e0e0e0;
+$color-brand-primary: rgba(0, 109, 170, 1);
+$color-text-muted: rgb(69, 69, 69);
+$color-text-emphasis: rgb(10, 48, 85);
+$color-hover-neutral: rgb(233, 230, 228);
+$color-background-alt: rgb(240, 243, 245);
+$color-background-soft: rgb(240, 238, 237);
+$color-border-strong: rgb(7, 34, 60);
+$color-border-subtle: rgba(0, 0, 0, 0.15);
+$color-hover-link: rgb(0, 60, 94);
+
+body{
+  font-family: $font-stack-system !important;
+}
+
+.container-fluid.wrapper-footer,
+.wrapper.wrapper-footer {
+  background: $color-surface-muted;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none !important;
+
+  &,
+  &.wrapper-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mit-footer {
+    background: $color-surface-default;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: none;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: $font-stack-system;
+
+    .mit-footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 48px;
+      width: 100%;
+    }
+
+    .mit-footer__column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mit-footer__column--brand {
+      flex: 0 0 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 33px;
+
+      .mit-footer__logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+          height: 33px;
+          width: auto;
+          max-height: 33px;
+          display: block;
+        }
+      }
+    }
+
+    .mit-footer__column--links {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .mit-footer__nav {
+        width: 100%;
+
+        .mit-footer__menu {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          column-gap: 18px;
+          row-gap: 2px;
+
+          .mit-footer__menu-item {
+            a {
+              color: $color-brand-primary;
+              font-size: $font-size-ui;
+              font-weight: 400;
+              line-height: 1.4;
+              text-decoration: none;
+
+              &:hover,
+              &:focus {
+                color: $color-hover-link;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      .mit-footer__legal {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: #4a4a4a;
+        font-size: 13.5px;
+        align-items: center;
+        text-align: center;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .mit-footer__column--actions {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 24px;
+      text-align: right;
+
+      .mit-footer__language {
+        .footer-language-selector {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 8px;
+        }
+      }
+
+      .mit-footer__powered-link {
+        display: inline-flex;
+        align-items: center;
+
+        img {
+          width: 120px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+body.view-in-course {
+  .wrapper-footer,
+  .wrapper.wrapper-footer,
+  .container-fluid.wrapper-footer {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container-fluid.wrapper-footer,
+  .wrapper.wrapper-footer {
+    .mit-footer {
+      padding: 24px 20px;
+
+      .mit-footer__inner {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .mit-footer__column--brand,
+      .mit-footer__column--actions {
+        flex: 0 0 auto;
+        width: auto;
+        align-items: flex-start;
+      }
+
+      .mit-footer__column--links {
+        flex: 1 1 0;
+
+        .mit-footer__nav {
+          .mit-footer__menu {
+            flex-direction: column;
+            align-items: center;
+            column-gap: 0;
+            row-gap: 2px;
+          }
+        }
+
+        .mit-footer__legal p {
+          text-align: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
