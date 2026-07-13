@@ -6,13 +6,10 @@
 <%namespace file='../main.html' import="login_query"/>
 
 <%!
-from django.urls import reverse
 from django.utils.translation import gettext as _
-from six import text_type
 %>
 
 <%
-  mktg_site_enabled = static.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False))
   courses_are_browsable = settings.FEATURES.get('COURSES_ARE_BROWSABLE')
   allows_login = not settings.FEATURES['DISABLE_LOGIN_BUTTON'] and not combined_login_and_register
   can_discover_courses = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
@@ -21,7 +18,6 @@ from six import text_type
 %>
 <nav class="nav-links" aria-label=${_("Supplemental Links")}>
   <div class="main">
-  % if mktg_site_enabled:
     <div class="mobile-nav-item hidden-mobile nav-item">
       <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
     </div>
@@ -33,7 +29,6 @@ from six import text_type
     <div class="mobile-nav-item hidden-mobile nav-item">
       <a href="${marketing_link('SCHOOLS')}">${_("Schools")}</a>
     </div>
-  % endif
   % if allows_login:
     % if can_discover_courses:
       <div class="mobile-nav-item hidden-mobile nav-item">

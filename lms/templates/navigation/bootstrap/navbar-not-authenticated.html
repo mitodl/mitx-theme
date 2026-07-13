@@ -12,7 +12,6 @@ from django.utils.translation import gettext as _
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
-  % if static.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
     <li class="nav-item">
       <a class="nav-link mt-2" href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
     </li>
@@ -24,7 +23,6 @@ from django.utils.translation import gettext as _
     <li class="nav-item">
       <a class="nav-link mt-2" href="${marketing_link('SCHOOLS')}">${_("Schools")}</a>
     </li>
-  % endif
 
   % if not settings.FEATURES['DISABLE_LOGIN_BUTTON'] and not combined_login_and_register:
     % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):

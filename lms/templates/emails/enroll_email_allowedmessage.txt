@@ -11,7 +11,7 @@ ${_("You have been invited to join {course_name} at {course_url} by a "
 % if auto_enroll:
 
 ${_("To access the course visit {course_url} and login.").format(course_url=course_url)}
-% elif course_about_url is not None:
+% else:
 
 ${_("To access the course visit {course_about_url} and register for the course.").format(
         course_about_url=course_about_url)}
@@ -29,11 +29,9 @@ ${_("Once you have registered and logged in, visit the course site at "
     "{course_about_url} to complete your enrollment.").format(
         course_about_url=course_about_url
     )}
-% elif course_about_url is not None:
+% else:
 ${_("Once you have logged in with Touchstone, visit {course_about_url} "
     "to join the course.").format(course_about_url=course_about_url)}
-% else:
-${_("You can then enroll in {course_name}.").format(course_name=display_name or course.display_name_with_default_escaped)}
 % endif
 % endif
 
