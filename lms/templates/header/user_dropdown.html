@@ -2,32 +2,31 @@
 <%page expression_filter="h"/>
 <%namespace name='static' file='static_content.html'/>
 
-## This template should not use the target student's details when masquerading, see TNL-4895
-<%
-self.real_user = getattr(user, 'real_user', user)
-%>
-
 <%!
+from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import gettext as _
 
+from lms.djangoapps.branding.api import get_learner_dashboard_url, get_learner_display_username
 from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_image_urls_for_user
 from openedx.core.djangoapps.user_api.accounts.utils import retrieve_last_sitewide_block_completed
-
 %>
 
 <%
-    profile_image_url = get_profile_image_urls_for_user(self.real_user)['medium']
-    username = self.real_user.username
-    resume_block = retrieve_last_sitewide_block_completed(self.real_user)
+## This template should not use the target student's details when masquerading, see TNL-4895
+self.real_user = getattr(user, 'real_user', user)
+profile_image_url = get_profile_image_urls_for_user(self.real_user)['medium']
+username = self.real_user.username
+displayname = get_learner_display_username(user=self.real_user)
+dashboard_url = get_learner_dashboard_url()
+resume_block = retrieve_last_sitewide_block_completed(self.real_user)
 %>
-
 
 <div class="nav-item hidden-mobile">
     <a href="${reverse('dashboard')}" class="menu-title">
-        <img class="user-image-frame" src="${profile_image_url}" alt="">
+        <img data-hj-suppress class="user-image-frame" src="${profile_image_url}" alt="">
         <span class="sr-only">${_("Dashboard for:")}</span>
-        <span class="username">${username}</span>
+        <span data-hj-suppress class="username">${displayname}</span>
     </a>
 </div>
 <div class="nav-item hidden-mobile nav-item-dropdown" tabindex="-1">
@@ -38,7 +37,7 @@ from openedx.core.djangoapps.user_api.accounts.utils import retrieve_last_sitewi
         % if resume_block:
             <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${resume_block}" role="menuitem">${_("Resume your last course")}</a></div>
         % endif
-        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('dashboard')}" role="menuitem">${_("Dashboard")}</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${dashboard_url}" role="menuitem">${_("Dashboard")}</a></div>
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('logout')}" role="menuitem">${_("Sign Out")}</a></div>
     </div>
 </div>
