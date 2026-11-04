@@ -33,6 +33,43 @@ body {
   background-color: $link-color !important;
 }
 
+.find-courses {
+  background: white !important;
+
+  .courses-container {
+    .courses {
+      padding: 0 0 0 30px !important;
+
+      .courses-listing .courses-listing-item {
+        width: 100% !important;
+        margin: 5px 0 10px !important;
+
+        a {
+          text-decoration: underline;
+        }
+
+        a:not(.btn) {
+          color: $link-color !important;
+        }
+
+        .course-date {
+          color: black;
+          display: inline-block;
+        }
+      }
+    }
+
+    .courses.non-credit {
+      padding-top: 50px !important;
+    }
+  }
+}
+
+.find-courses .courses-container .courses
+.global-header {
+  background: $header-bg !important;
+}
+
 .global-header .user {
   margin-top: 4px;
 }
@@ -65,6 +102,10 @@ body {
   border: none !important;
 }
 
+.home > header .title > hgroup h2 {
+  text-transform: none !important;
+}
+
 .user-image-frame {
   display: none !important;
 }
@@ -72,6 +113,10 @@ body {
 .global-header .user .user-link .label-username {
   float: right;
   margin: 13px 5px 15px 15px !important;
+}
+
+.heading-left {
+  text-align: left !important;
 }
 
 .window-wrap {
