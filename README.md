@@ -6,7 +6,7 @@
 |----------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [dogwood](https://github.com/mitodl/mitx-theme/tree/dogwood)   | OBSOLETE theme for use with the `mitx-dogwood` release of Residential MITx                      |
 | [ficus](https://github.com/mitodl/mitx-theme/tree/ficus)       | OBSOLETE theme for use with the `mitx-ficus` release of Residential MITx                        |
-| [ginko](https://github.com/mitodl/mitx-theme/tree/ginko)       | OBSOLETE theme for use with the `mitx-ginko` release of Residential MITx                        |
+| [ginkgo](https://github.com/mitodl/mitx-theme/tree/ginkgo)     | OBSOLETE theme for use with the `mitx-ginkgo` release of Residential MITx                       |
 | [hawthorn](https://github.com/mitodl/mitx-theme/tree/hawthorn) | OBSOLETE theme for use with the `mitx-hawthorn` release of Residential MITx                     |
 | [ironwood](https://github.com/mitodl/mitx-theme/tree/ironwood) | OBSOLETE theme for use with the `mitx-ironwood` release of Residential MITx                     |
 | [koa](https://github.com/mitodl/mitx-theme/tree/koa)           | OBSOLETE theme for use with the `mitx-koa` release of Residential MITx                          |
